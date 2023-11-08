@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true">
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -47,6 +54,7 @@
         android:id="@+id/editText_login_pswd"
         style="@style/Edit_Text"
         android:hint="@string/login_passwordHint"
+        android:inputType="numberPassword"
         android:drawableRight="@drawable/login_password_icon"
         app:layout_constraintEnd_toStartOf="@id/View_login_container"
         app:layout_constraintEnd_toEndOf="@id/View_login_container"
@@ -71,5 +79,27 @@
         app:layout_constraintStart_toStartOf="@id/View_login_container"
         app:layout_constraintTop_toBottomOf="@+id/Button_login_singin"/>
 
+    <ProgressBar
+        style="@style/progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/View_login_container"
+        android:id="@+id/login_progressbar"
+        android:visibility="invisible"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_progressbar"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:id="@+id/TextView_login_singup"
+        android:text="@string/login_singup"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

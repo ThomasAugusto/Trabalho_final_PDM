@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SingUp_form">
+
+    <TextView
+        style="@style/TextViewTitles"
+        android:id="@+id/TextView_singup_title"
+        android:text="@string/singup_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toBottomOf="@id/TextView_singup_title"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:id="@+id/TextView_singup_instruction"
+        android:text="@string/singup_instruction"/>
+
+    <View
+        android:id="@+id/View_singup_container"
+        style="@style/ContainerComponentsSingUp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextView_singup_instruction"/>
+
+    <EditText
+        android:id="@+id/editText_singup_user"
+        style="@style/Edit_Text"
+        android:hint="@string/singup_userHint"
+        android:drawableRight="@drawable/login_user_icon"
+        app:layout_constraintEnd_toStartOf="@id/View_singup_container"
+        app:layout_constraintEnd_toEndOf="@id/View_singup_container"
+        app:layout_constraintTop_toTopOf="@id/View_singup_container"/>
+
+    <EditText
+        android:id="@+id/editText_singup_pswd"
+        style="@style/Edit_Text"
+        android:hint="@string/singup_passHint"
+        android:inputType="numberPassword"
+        android:drawableRight="@drawable/login_password_icon"
+        app:layout_constraintEnd_toStartOf="@id/View_singup_container"
+        app:layout_constraintEnd_toEndOf="@id/View_singup_container"
+        app:layout_constraintTop_toBottomOf="@id/editText_singup_user"/>
+
+    <EditText
+        android:id="@+id/editText_singup_repswd"
+        style="@style/Edit_Text"
+        android:hint="@string/singup_repassHint"
+        android:inputType="numberPassword"
+        android:drawableRight="@drawable/login_password_icon"
+        app:layout_constraintEnd_toStartOf="@id/View_singup_container"
+        app:layout_constraintEnd_toEndOf="@id/View_singup_container"
+        app:layout_constraintTop_toBottomOf="@id/editText_singup_pswd"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/Button"
+        android:id="@+id/Button_singup_submit"
+        android:text="@string/singup_submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_singup_repswd"/>
+
+    <ProgressBar
+        style="@style/progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/View_singup_container"
+        android:id="@+id/login_progressbar"
+        android:visibility="invisible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
