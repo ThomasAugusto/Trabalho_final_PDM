@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Trabalho_final_PDM</string>
+
+    //Login Strings
+    <string name="login_title">LOGIN</string>
+    <string name="login_userHint">Usuário</string>
+    <string name="login_passwordHint">Senha</string>
+    <string name="login_button_singin">LOGAR</string>
+    <string name="login_forgetpass">Esqueci minha senha</string>
+
+
+</resources>
