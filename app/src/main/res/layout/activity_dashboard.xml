@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardActivity"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/dashboard_logo_img"
+        android:layout_width="200dp"
+        android:layout_height="57dp"
+        android:src="@drawable/logo_senai"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dashboard_logo_img"
+        android:layout_marginTop="40dp"
+        android:id="@+id/TextView_dashboard_hello"
+        android:text="Olá, Fulano"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <View
+        android:id="@+id/View_dashboard_container"
+        style="@style/ContainerComponentsDashboard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextView_dashboard_hello"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/Button"
+        android:id="@+id/Button_dashboard_accont"
+        android:text="@string/singup_submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/View_dashboard_container"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/Button"
+        android:id="@+id/Button_dashboard_pix"
+        android:text="@string/singup_submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Button_dashboard_accont"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/Button"
+        android:id="@+id/Button_dashboar_singout"
+        android:text="@string/singup_submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Button_dashboard_pix"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

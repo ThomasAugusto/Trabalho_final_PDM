@@ -17,6 +17,15 @@
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginRight">20dp</item>
     </style>
+
+    <style name="ContainerComponentsDashboard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">205dp</item>
+        <item name="android:background">@drawable/container_components</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
     
     <style name="TextViewTitles">
         <item name="android:textStyle">bold</item>
