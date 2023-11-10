@@ -10,11 +10,12 @@ import android.widget.TextView;
 public class Login_form extends AppCompatActivity {
 
     private TextView text_sing_up;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_form);
-
+        this.getSupportActionBar().hide();
         StartComponents();
 
         text_sing_up.setOnClickListener(new View.OnClickListener() {

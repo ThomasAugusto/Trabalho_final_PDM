@@ -44,8 +44,9 @@
     <EditText
         android:id="@+id/editText_login_user"
         style="@style/Edit_Text"
+        android:inputType="textEmailAddress"
         android:hint="@string/login_userHint"
-        android:drawableRight="@drawable/login_user_icon"
+        android:drawableRight="@drawable/email_icon"
         app:layout_constraintEnd_toStartOf="@id/View_login_container"
         app:layout_constraintEnd_toEndOf="@id/View_login_container"
         app:layout_constraintTop_toTopOf="@id/View_login_container"/>
@@ -81,6 +82,7 @@
 
     <ProgressBar
         style="@style/progress_bar"
+        android:indeterminateTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/View_login_container"

@@ -50,8 +50,9 @@
     <EditText
         android:id="@+id/editText_singup_user"
         style="@style/Edit_Text"
+        android:inputType="textEmailAddress"
         android:hint="@string/singup_userHint"
-        android:drawableRight="@drawable/login_user_icon"
+        android:drawableRight="@drawable/email_icon"
         app:layout_constraintEnd_toStartOf="@id/View_singup_container"
         app:layout_constraintEnd_toEndOf="@id/View_singup_container"
         app:layout_constraintTop_toTopOf="@id/View_singup_container"/>
@@ -86,10 +87,11 @@
 
     <ProgressBar
         style="@style/progress_bar"
+        android:indeterminateTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/View_singup_container"
-        android:id="@+id/login_progressbar"
+        android:id="@+id/singup_progressbar"
         android:visibility="invisible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

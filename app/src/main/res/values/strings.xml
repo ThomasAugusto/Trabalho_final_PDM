@@ -17,5 +17,10 @@
     <string name="singup_repassHint">Repita a senha</string>
     <string name="singup_submit">CADASTRAR</string>
 
+    //Dashboard Strings
+    <string name="dashboard_btn1">MÓDULO CONTA</string>
+    <string name="dashboard_btn2">MÓDULO PIX</string>
+    <string name="dashboard_btn3">DESLOGAR</string>
+
 
 </resources>
