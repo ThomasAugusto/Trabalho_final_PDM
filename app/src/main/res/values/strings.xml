@@ -3,7 +3,7 @@
 
     //Login Strings
     <string name="login_title">Login</string>
-    <string name="login_userHint">Usuário</string>
+    <string name="login_userHint">Email</string>
     <string name="login_passwordHint">Senha</string>
     <string name="login_button_singin">LOGAR</string>
     <string name="login_forgetpass">Esqueci minha senha</string>
@@ -13,6 +13,7 @@
     <string name="singup_title">Cadastro</string>
     <string name="singup_instruction">Por favor digite seu nome de usuário e senha</string>
     <string name="singup_userHint">Nome de usuário</string>
+    <string name="singup_emailHint">Email</string>
     <string name="singup_passHint">Nova senha</string>
     <string name="singup_repassHint">Repita a senha</string>
     <string name="singup_submit">CADASTRAR</string>

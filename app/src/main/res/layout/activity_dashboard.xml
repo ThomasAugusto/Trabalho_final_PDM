@@ -31,6 +31,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dashboard_logo_img"
+        android:drawableLeft="@drawable/email_icon"
+        android:drawableTint="@color/white"
         android:layout_marginTop="40dp"
         android:id="@+id/TextView_dashboard_hello"
         android:text="Olá, Fulano"
@@ -68,26 +70,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Button_dashboard_pix"/>
-
-    <ProgressBar
-        style="@style/progress_bar"
-        android:indeterminateTint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/View_dashboard_container"
-        android:id="@+id/dashboard_progressbar"
-        android:visibility="invisible"
-        android:layout_marginTop="20dp"/>
-
-    <ImageView
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:src="@drawable/don_ramon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dashboard_progressbar"/>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
