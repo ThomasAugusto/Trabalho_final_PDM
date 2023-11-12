@@ -49,7 +49,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         style="@style/Button"
-        android:id="@+id/Button_dashboard_accont"
+        android:id="@+id/Button_dashboard_account"
         android:text="@string/dashboard_btn1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
         android:text="@string/dashboard_btn2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Button_dashboard_accont"/>
+        app:layout_constraintTop_toBottomOf="@+id/Button_dashboard_account"/>
 
     <androidx.appcompat.widget.AppCompatButton
         style="@style/Button"

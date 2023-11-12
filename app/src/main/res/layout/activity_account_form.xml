@@ -1,0 +1,85 @@
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Account_form"
+        android:background="@drawable/background">
+
+        <TextView
+            style="@style/TextViewTitles"
+            android:id="@+id/TextView_account_title"
+            android:text="@string/Account_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@id/TextView_account_title"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:id="@+id/TextView_account_describle"
+            android:text="@string/Account_describle"/>
+
+        <View
+            style="@style/ContainerComponentsAccount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextView_account_describle"
+            android:id="@+id/account_container"/>
+
+        <Spinner
+            style="@style/Edit_Spinner"
+            android:id="@+id/account_spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/account_container"/>
+
+        <EditText
+            android:id="@+id/editText_account"
+            style="@style/Edit_Text"
+            android:inputType="textEmailAddress"
+            android:hint="@string/login_userHint"
+            android:drawableRight="@drawable/email_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/account_spinner"
+            android:maxLength="35"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/Button"
+            android:id="@+id/Button_account_register"
+            android:text="@string/Account_btn1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_account"/>
+
+        <ProgressBar
+            style="@style/progress_bar"
+            android:indeterminateTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/account_container"
+            android:id="@+id/account_progressbar"
+            android:visibility="invisible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

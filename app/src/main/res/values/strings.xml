@@ -23,5 +23,8 @@
     <string name="dashboard_btn2">MÓDULO PIX</string>
     <string name="dashboard_btn3">DESLOGAR</string>
 
-
+    //Account Strings
+    <string name="Account_title">Chave PIX</string>
+    <string name="Account_describle">Por favor registre uma chave PIX</string>
+    <string name="Account_btn1">REGISTRAR CHAVE</string>
 </resources>

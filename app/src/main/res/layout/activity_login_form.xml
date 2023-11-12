@@ -49,7 +49,8 @@
         android:drawableRight="@drawable/email_icon"
         app:layout_constraintEnd_toStartOf="@id/View_login_container"
         app:layout_constraintEnd_toEndOf="@id/View_login_container"
-        app:layout_constraintTop_toTopOf="@id/View_login_container"/>
+        app:layout_constraintTop_toTopOf="@id/View_login_container"
+        android:maxLength="35"/>
 
     <EditText
         android:id="@+id/editText_login_pswd"
@@ -59,7 +60,8 @@
         android:drawableRight="@drawable/login_password_icon"
         app:layout_constraintEnd_toStartOf="@id/View_login_container"
         app:layout_constraintEnd_toEndOf="@id/View_login_container"
-        app:layout_constraintTop_toBottomOf="@id/editText_login_user"/>
+        app:layout_constraintTop_toBottomOf="@id/editText_login_user"
+        android:maxLength="6"/>
 
     <androidx.appcompat.widget.AppCompatButton
         style="@style/Button"
