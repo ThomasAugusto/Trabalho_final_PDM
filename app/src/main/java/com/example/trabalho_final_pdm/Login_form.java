@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -74,7 +75,9 @@ public class Login_form extends AppCompatActivity {
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
+                    Hidekeyboard(v);
                     Progressbar();
+                    FreezeComponents();
                 }else {
                     String error;
                     try {
@@ -104,6 +107,21 @@ public class Login_form extends AppCompatActivity {
                 finish();
             }
         },3000);
+    }
+    private void CheckPixKey(){
+
+    }
+    private void Hidekeyboard(View v){
+        if (v != null){
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(this.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(),0);
+        }
+    }
+    private void FreezeComponents(){
+        text_sing_up.setClickable(false);
+        text_email.setClickable(false);
+        text_password.setClickable(false);
+        btn_sing_in.setClickable(false);
     }
     private void StartComponents(){
         text_sing_up = findViewById(R.id.TextView_login_singup);

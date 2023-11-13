@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                     LoginScreen();
                 }
             }
-        },3000);
+        },2000);
     }
 
     private void LoginScreen(){

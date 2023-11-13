@@ -31,11 +31,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dashboard_logo_img"
-        android:drawableLeft="@drawable/email_icon"
         android:drawableTint="@color/white"
         android:layout_marginTop="40dp"
         android:id="@+id/TextView_dashboard_hello"
-        android:text="Olá, Fulano"
+        android:text=""
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="@color/white"/>

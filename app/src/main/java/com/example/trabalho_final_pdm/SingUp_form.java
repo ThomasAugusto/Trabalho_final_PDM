@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
@@ -83,7 +84,9 @@ public class SingUp_form extends AppCompatActivity {
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
                     Usersubimit();
+                    Hidekeyboard(v);
                     Progressbar();
+                    FreezeComponents();
 
                 }else {
                     String error;
@@ -113,18 +116,18 @@ public class SingUp_form extends AppCompatActivity {
         userID=FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         Users users = new Users(user,pass);
-        db.collection("Users").add(users).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        DocumentReference documentReference = db.collection("users").document(userID);
+        documentReference.set(users).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Log.d("USERS_ADDSUCESS","DocumentSnapshot written with ID: " + documentReference.getId());
+            public void onSuccess(Void unused) {
+                Log.d("db","Success in data");
             }
-        })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("USER_ADDFAIL","Error adding document",e);
-                    }
-                });
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("db","Fail in data");
+            }
+        });
     }
     private void Progressbar(){
         progress_bar.setVisibility(View.VISIBLE);
@@ -136,6 +139,19 @@ public class SingUp_form extends AppCompatActivity {
                 finish();
             }
         },3000);
+    }
+    private void Hidekeyboard(View v){
+        if (v != null){
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(this.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(),0);
+        }
+    }
+    private void FreezeComponents(){
+        edit_user.setClickable(false);
+        edit_email.setClickable(false);
+        edit_pass.setClickable(false);
+        edit_repass.setClickable(false);
+        btn_submit.setClickable(false);
     }
     private void StartComponents(){
         edit_user=findViewById(R.id.editText_singup_user);
