@@ -20,6 +20,9 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login_form extends AppCompatActivity {
 
@@ -27,6 +30,8 @@ public class Login_form extends AppCompatActivity {
     private EditText text_email,text_password;
     private AppCompatButton btn_sing_in;
     private ProgressBar progress_bar;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    String userID;
     String[]mensages = {"Por favor preencher todos os campos!",
                         "Login realizado com sucesso!"};
 
@@ -102,14 +107,30 @@ public class Login_form extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(Login_form.this, DashboardActivity.class);
-                startActivity(intent);
-                finish();
+                CheckPixKey();
             }
         },3000);
     }
     private void CheckPixKey(){
-
+        userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DocumentReference useraccount = db.collection("accounts").document(userID);
+        useraccount.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()){
+                        Intent intent = new Intent(Login_form.this, DashboardActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }else {
+                        Intent intent = new Intent(Login_form.this, Account_form.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            }
+        });
     }
     private void Hidekeyboard(View v){
         if (v != null){
@@ -127,7 +148,7 @@ public class Login_form extends AppCompatActivity {
         text_sing_up = findViewById(R.id.TextView_login_singup);
         text_email = findViewById(R.id.editText_login_user);
         text_password = findViewById(R.id.editText_login_pswd);
-        btn_sing_in = findViewById(R.id.Button_login_singin);
+        btn_sing_in = findViewById(R.id.button_login_singin);
         progress_bar = findViewById(R.id.login_progressbar);
     }
 }

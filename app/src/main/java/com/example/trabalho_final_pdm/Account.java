@@ -2,9 +2,9 @@ package com.example.trabalho_final_pdm;
 
 public class Account extends Users{
     private double balance;
-    private int pixkey;
+    private String pixkey;
 
-    public Account(double balance, int pixkey) {
+    public Account(double balance, String pixkey) {
         this.balance = balance;
         this.pixkey = pixkey;
     }
@@ -17,11 +17,11 @@ public class Account extends Users{
         this.balance = balance;
     }
 
-    public int getPixkey() {
+    public String getPixkey() {
         return pixkey;
     }
 
-    public void setPixkey(int pixkey) {
+    public void setPixkey(String pixkey) {
         this.pixkey = pixkey;
     }
 }

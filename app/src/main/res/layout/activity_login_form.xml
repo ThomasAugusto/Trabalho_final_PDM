@@ -65,7 +65,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         style="@style/Button"
-        android:id="@+id/Button_login_singin"
+        android:id="@+id/button_login_singin"
         android:text="@string/login_button_singin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="@id/View_login_container"
         app:layout_constraintStart_toStartOf="@id/View_login_container"
-        app:layout_constraintTop_toBottomOf="@+id/Button_login_singin"/>
+        app:layout_constraintTop_toBottomOf="@+id/button_login_singin"/>
 
     <ProgressBar
         style="@style/progress_bar"

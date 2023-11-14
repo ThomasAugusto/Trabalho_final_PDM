@@ -92,7 +92,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         style="@style/Button"
-        android:id="@+id/Button_singup_submit"
+        android:id="@+id/button_singup_submit"
         android:text="@string/singup_submit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

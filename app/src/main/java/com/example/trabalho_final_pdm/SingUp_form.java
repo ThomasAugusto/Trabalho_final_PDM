@@ -158,7 +158,7 @@ public class SingUp_form extends AppCompatActivity {
         edit_email=findViewById(R.id.editText_singup_email);
         edit_pass=findViewById(R.id.editText_singup_pswd);
         edit_repass=findViewById(R.id.editText_singup_repswd);
-        btn_submit=findViewById(R.id.Button_singup_submit);
+        btn_submit=findViewById(R.id.button_singup_submit);
         progress_bar=findViewById(R.id.singup_progressbar);
     }
 }

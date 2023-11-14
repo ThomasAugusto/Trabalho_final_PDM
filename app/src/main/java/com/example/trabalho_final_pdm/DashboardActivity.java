@@ -42,18 +42,7 @@ String userID;
     protected void onStart() {
         super.onStart();
         userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DocumentReference useraccount = db.collection("accounts").document(userID);
         DocumentReference username = db.collection("users").document(userID);
-        useraccount.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (value == null){
-                    Intent intent = new Intent(DashboardActivity.this,Account_form.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        });
         username.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -66,8 +55,8 @@ String userID;
     }
     private void StartComponents(){
         text_welcome = findViewById(R.id.TextView_dashboard_hello);
-        btn_account = findViewById(R.id.Button_dashboard_account);
-        btn_pix = findViewById(R.id.Button_dashboard_pix);
-        btn_logof = findViewById(R.id.Button_dashboar_singout);
+        btn_account = findViewById(R.id.button_dashboard_account);
+        btn_pix = findViewById(R.id.button_dashboard_pix);
+        btn_logof = findViewById(R.id.button_dashboar_singout);
     }
 }

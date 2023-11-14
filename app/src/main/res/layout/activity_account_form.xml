@@ -55,17 +55,15 @@
         <EditText
             android:id="@+id/editText_account"
             style="@style/Edit_Text"
-            android:inputType="textEmailAddress"
-            android:hint="@string/login_userHint"
-            android:drawableRight="@drawable/email_icon"
+            android:inputType="number"
+            android:hint="key here"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/account_spinner"
-            android:maxLength="35"/>
+            app:layout_constraintTop_toBottomOf="@id/account_spinner"/>
 
         <androidx.appcompat.widget.AppCompatButton
             style="@style/Button"
-            android:id="@+id/Button_account_register"
+            android:id="@+id/button_account_register"
             android:text="@string/Account_btn1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

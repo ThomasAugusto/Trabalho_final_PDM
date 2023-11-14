@@ -27,4 +27,8 @@
     <string name="Account_title">Chave PIX</string>
     <string name="Account_describle">Por favor registre uma chave PIX</string>
     <string name="Account_btn1">REGISTRAR CHAVE</string>
+    <string-array name="Account_array">
+        <item>Celular</item>
+        <item>CPF</item>
+    </string-array>
 </resources>
