@@ -52,11 +52,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/account_container"/>
 
-        <EditText
-            android:id="@+id/editText_account"
+        <com.santalu.maskara.widget.MaskEditText
+            android:id="@+id/editText_account_CPF"
             style="@style/Edit_Text"
             android:inputType="number"
-            android:hint="key here"
+            android:hint="Digite seu CPF"
+            app:mask="___.___.___-__"
+            app:maskCharacter="_"
+            app:maskStyle="persistent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/account_spinner"/>
+
+        <com.santalu.maskara.widget.MaskEditText
+            android:id="@+id/editText_account_numPhone"
+            style="@style/Edit_Text"
+            android:inputType="number"
+            android:hint="Digite seu telefone com DDD"
+            app:mask="(__) _____-____"
+            app:maskCharacter="_"
+            app:maskStyle="persistent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/account_spinner"/>
@@ -67,7 +82,7 @@
             android:text="@string/Account_btn1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText_account"/>
+            app:layout_constraintTop_toBottomOf="@+id/editText_account_CPF"/>
 
         <ProgressBar
             style="@style/progress_bar"

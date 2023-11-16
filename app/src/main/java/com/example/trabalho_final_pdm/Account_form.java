@@ -1,38 +1,39 @@
 package com.example.trabalho_final_pdm;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 
-import com.santalu.maskara.Mask;
-import com.santalu.maskara.MaskChangedListener;
-import com.santalu.maskara.MaskStyle;
+import com.example.trabalho_final_pdm.databinding.ActivityAccountFormBinding;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Account_form extends AppCompatActivity {
 
-Spinner spinner;
-EditText edit_text;
-AppCompatButton btn_submib;
+    private ActivityAccountFormBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_form);
         this.getSupportActionBar().hide();
+        binding = ActivityAccountFormBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         StartComponents();
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        binding.accountSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectOP = (String) parent.getItemAtPosition(position);
@@ -44,6 +45,91 @@ AppCompatButton btn_submib;
 
             }
         });
+        binding.buttonAccountRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String type_key = (String) binding.accountSpinner.getSelectedItem();
+                String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                if (type_key.equals("CPF")){
+                    get_value_CPF(v,type_key,userID);
+                }else {
+                    get_value_numPhone(v,type_key,userID);
+                }
+            }
+        });
+    }
+
+    private void get_value_CPF(View v, String type_key,String userID){
+        boolean isDone = binding.editTextAccountCPF.isDone();
+        String pix_key = binding.editTextAccountCPF.getUnMasked();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        double balance = 0;
+        if (isDone){
+            Account account = new Account(balance,type_key,pix_key);
+            DocumentReference documentReference = db.collection("accounts").document(userID);
+            documentReference.set(account).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Log.d("db","Success in data");
+                    Log.d("db","Success in data");
+                    Snackbar snackbar = Snackbar.make(v,"Chave PIX cadastrada com sucesso",Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    Hidekeyboard(v);
+                    snackbar.show();
+                    Intent intent = new Intent(Account_form.this, DashboardActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d("db","Fail in data");
+                }
+            });
+        }else {
+            Snackbar snackbar = Snackbar.make(v,"Por favor digite um CPF válido",Snackbar.LENGTH_SHORT);
+            snackbar.setBackgroundTint(Color.WHITE);
+            snackbar.setTextColor(Color.BLACK);
+            Hidekeyboard(v);
+            snackbar.show();
+        }
+    }
+    private void get_value_numPhone(View v, String type_key,String userID){
+        boolean isDone = binding.editTextAccountNumPhone.isDone();
+        String pix_key = binding.editTextAccountNumPhone.getUnMasked();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        double balance = 0;
+        if (isDone){
+            Account account = new Account(balance,type_key,pix_key);
+            DocumentReference documentReference = db.collection("accounts").document(userID);
+            documentReference.set(account).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Log.d("db","Success in data");
+                    Snackbar snackbar = Snackbar.make(v,"Chave PIX cadastrada com sucesso",Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    Hidekeyboard(v);
+                    snackbar.show();
+                    Intent intent = new Intent(Account_form.this, DashboardActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d("db","Fail in data");
+                }
+            });
+        }else {
+            Snackbar snackbar = Snackbar.make(v,"Por favor digite um telefone válido",Snackbar.LENGTH_SHORT);
+            snackbar.setBackgroundTint(Color.WHITE);
+            snackbar.setTextColor(Color.BLACK);
+            Hidekeyboard(v);
+            snackbar.show();
+        }
     }
     private void afterSpinnerChange(String selectOP){
         if (selectOP.equals("CPF")){
@@ -54,36 +140,30 @@ AppCompatButton btn_submib;
     }
 
     private void MaskCPF(){
-            Mask mask = new Mask(
-                    "___.___.___-__",
-                    '_',
-                    MaskStyle.NORMAL
-            );
-            MaskChangedListener listener = new MaskChangedListener(mask);
-            edit_text.setText("");
-            edit_text.removeTextChangedListener(listener);
-            edit_text.addTextChangedListener(listener);
-            edit_text.setHint("Numero de CPF");
+        binding.editTextAccountNumPhone.setClickable(false);
+        binding.editTextAccountNumPhone.setVisibility(View.INVISIBLE);
+        binding.editTextAccountCPF.setText("");
+        binding.editTextAccountCPF.setClickable(true);
+        binding.editTextAccountCPF.setVisibility(View.VISIBLE);
     }
     private void MasknumPhone(){
-            Mask mask = new Mask(
-                    "(__) _____-____",
-                    '_',
-                    MaskStyle.NORMAL
-            );
-            MaskChangedListener listener = new MaskChangedListener(mask);
-            edit_text.setText("");
-            edit_text.removeTextChangedListener(listener);
-            edit_text.addTextChangedListener(listener);
-            edit_text.setHint("Numero com DDD");
+        binding.editTextAccountCPF.setClickable(false);
+        binding.editTextAccountCPF.setVisibility(View.INVISIBLE);
+        binding.editTextAccountNumPhone.setText("");
+        binding.editTextAccountNumPhone.setClickable(true);
+        binding.editTextAccountNumPhone.setVisibility(View.VISIBLE);
     }
+    private void Hidekeyboard(View v) {
+        if (v != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(this.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        }
+    }
+
     private void StartComponents(){
-        spinner=findViewById(R.id.account_spinner);
-        edit_text=findViewById(R.id.editText_account);
-        btn_submib=findViewById(R.id.button_account_register);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Account_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        binding.accountSpinner.setAdapter(adapter);
     }
 }
