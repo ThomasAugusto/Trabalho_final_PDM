@@ -62,7 +62,7 @@ public class Account_form extends AppCompatActivity {
 
     private void get_value_CPF(View v, String type_key,String userID){
         boolean isDone = binding.editTextAccountCPF.isDone();
-        String pix_key = binding.editTextAccountCPF.getUnMasked();
+        String pix_key = binding.editTextAccountCPF.getMasked();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         double balance = 0;
         if (isDone){
@@ -98,7 +98,7 @@ public class Account_form extends AppCompatActivity {
     }
     private void get_value_numPhone(View v, String type_key,String userID){
         boolean isDone = binding.editTextAccountNumPhone.isDone();
-        String pix_key = binding.editTextAccountNumPhone.getUnMasked();
+        String pix_key = binding.editTextAccountNumPhone.getMasked();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         double balance = 0;
         if (isDone){
