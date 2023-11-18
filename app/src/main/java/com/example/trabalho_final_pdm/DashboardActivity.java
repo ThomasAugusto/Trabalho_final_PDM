@@ -36,6 +36,14 @@ String userID;
                 finish();
             }
         });
+        btn_pix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, List_Pix_Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     @Override

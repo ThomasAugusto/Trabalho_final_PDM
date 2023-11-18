@@ -1,19 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_list_pix">
 
     <View
+        android:id="@+id/Container_list_PIX"
         style="@style/ContainerComponentsListPIX"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        style="@style/TextViewLists"
-        android:id="@+id/name_user_list"
-        app:layout_constraintStart_toStartOf="parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/Container_list_PIX"
+        app:layout_constraintEnd_toEndOf="@+id/Container_list_PIX"
+        app:layout_constraintTop_toTopOf="@id/Container_list_PIX"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="70dp"
+        android:id="@+id/item1">
+        <TextView
+            style="@style/TextViewLists"
+            android:id="@+id/list_pix_name"
+            android:text="Nome: Fulano"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/Container_list_PIX"
+        app:layout_constraintEnd_toEndOf="@+id/Container_list_PIX"
+        app:layout_constraintTop_toBottomOf="@id/item1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="70dp"
+        android:id="@+id/item2">
+        <TextView
+            style="@style/TextViewLists"
+            android:id="@+id/list_pix_type"
+            android:text="Tipo: CPF"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/Container_list_PIX"
+        app:layout_constraintEnd_toEndOf="@+id/Container_list_PIX"
+        app:layout_constraintTop_toBottomOf="@id/item2"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="70dp">
+        <TextView
+            style="@style/TextViewLists"
+            android:id="@+id/list_pix_key"
+            android:text="Chave: 999.999.999-99"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:src="@drawable/favorite_false"
+        android:id="@+id/item_pix_status"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Container_list_PIX"
+        app:layout_constraintStart_toEndOf="@+id/item2"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
