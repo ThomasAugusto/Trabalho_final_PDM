@@ -31,4 +31,9 @@
         <item>Celular</item>
         <item>CPF</item>
     </string-array>
+
+    //Módulo Conta Strings
+    <string name="deposito_btn">DEPÓSITO</string>
+    <string name="retirada_btn">RETIRADA</string>
+    <string name="extrato_btn">EXTRATO</string>
 </resources>
