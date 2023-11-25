@@ -1,6 +1,8 @@
 package com.example.trabalho_final_pdm;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,4 +28,5 @@ public class List_Pix_Activity extends AppCompatActivity {
         pixAdapter = new PixAdapter(new ArrayList<>(PixList.fakePixs()));
         recyclerView.setAdapter(pixAdapter);
     }
+
 }

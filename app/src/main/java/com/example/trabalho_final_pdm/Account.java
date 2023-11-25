@@ -4,6 +4,9 @@ public class Account{
     private double balance;
     private String type_key;
     private String pixkey;
+    private String conta;
+    private String saldo;
+
 
     public Account() {
     }
@@ -36,5 +39,18 @@ public class Account{
 
     public void setPixkey(String pixkey) {
         this.pixkey = pixkey;
+    }
+
+    public String getConta() {return conta;}
+
+    public void setConta(String conta) {this.conta = conta;
+    }
+
+    public String getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(String saldo) {
+        this.saldo = saldo;
     }
 }
