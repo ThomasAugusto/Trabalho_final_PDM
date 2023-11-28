@@ -4,37 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Modulo_Geral_Extrato"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".Modulo_Geral_Extrato">
 
     <ImageView
         android:id="@+id/logo_extrato"
         android:layout_width="200dp"
         android:layout_height="57dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/logo_senai"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="40dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/extrato_mensagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_extrato"
-        android:drawableTint="@color/white"
         android:layout_marginTop="40dp"
-        android:id="@+id/extrato_mensagem"
+        android:drawableTint="@color/white"
         android:text="@string/extrato_mensagem_txt"
+        android:textColor="@color/white"
         android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
-
-    <View
-        style="@style/ContainerComponentsAccount"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/extrato_mensagem"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_extrato" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_pix_list"
+        android:layout_width="408dp"
+        android:layout_height="519dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/extrato_mensagem"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/item_pixkey_list"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

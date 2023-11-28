@@ -33,13 +33,27 @@
 
     <View
         style="@style/ContainerComponentsAccount"
+        android:id="@+id/container_deposito"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/deposito_mensagem"/>
 
+    <EditText
+        style="@style/Edit_Text"
+        android:id="@+id/input_deposito_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/container_deposito"
+        android:hint="Digite o valor que deseja depositar"/>
 
-
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/confirm_deposito"
+        style="@style/Button"
+        android:layout_marginTop="84dp"
+        android:text="Confirmar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_deposito_value" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
