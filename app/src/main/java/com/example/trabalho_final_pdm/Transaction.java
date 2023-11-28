@@ -10,7 +10,7 @@ public class Transaction {
     public Transaction(String type, double value, Date date) {
         this.type = type;
         this.value = value;
-        this.date = date;
+        this.date = this.date;
     }
 
     public String getType() {

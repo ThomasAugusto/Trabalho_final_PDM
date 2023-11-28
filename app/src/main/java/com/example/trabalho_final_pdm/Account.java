@@ -1,5 +1,6 @@
 package com.example.trabalho_final_pdm;
 
+import java.util.Date;
 import java.util.List;
 
 public class Account{
@@ -55,5 +56,38 @@ public class Account{
 
     public void setTransactions(List<Transaction> transactions) {
         this.transactions = transactions;
+    }
+
+    public void deposito(double valor) {
+        if (valor > 0) {
+            balance += valor;
+            transactions.add(new Transaction("Depósito", valor, new Date()));
+            System.out.println("Depósito de " + valor + " realizado com sucesso.");
+        } else {
+            System.out.println("Valor de depósito inválido.");
+        }
+    }
+
+    public void retirar(double valor) {
+        if (valor > 0 && balance >= valor) {
+            balance -= valor;
+            Transaction withdrawTransaction = new Transaction("Retirada", -valor, new Date());
+            transactions.add(withdrawTransaction);
+            System.out.println("Retirada de " + valor + " realizada com sucesso.");
+        } else {
+            System.out.println("Valor de retirada inválido ou saldo insuficiente.");
+        }
+    }
+
+    public void extrato() {
+        System.out.println("Extrato de transações:");
+
+        if (transactions.isEmpty()) {
+            System.out.println("Nenhuma transação disponível.");
+        } else {
+            for (Transaction transaction : transactions) {
+                System.out.println("Tipo: " + transaction.getType() + ", Valor: " + transaction.getValue() + ", Data: " + transaction.getDate());
+            }
+        }
     }
 }
