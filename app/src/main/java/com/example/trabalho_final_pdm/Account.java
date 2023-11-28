@@ -1,19 +1,44 @@
 package com.example.trabalho_final_pdm;
 
-public class Account{
-    private double balance;
-    private String type_key;
-    private String pixkey;
-    private float saldo;
+import java.util.List;
 
-    public Account() {
+public class Account{
+    private String userId;
+    private String typeKey;
+    private String pixKey;
+    private double balance;
+    private List<Transaction> transactions;
+
+    public Account(String userId, String typeKey, String pixKey, double balance, List<Transaction> transactions) {
+        this.userId = userId;
+        this.typeKey = typeKey;
+        this.pixKey = pixKey;
+        this.balance = balance;
+        this.transactions = transactions;
     }
 
-    public Account(double balance, String type_key, String pixkey) {
-        this.balance = balance;
-        this.type_key = type_key;
-        this.pixkey = pixkey;
+    public String getUserId() {
+        return userId;
+    }
 
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getTypeKey() {
+        return typeKey;
+    }
+
+    public void setTypeKey(String typeKey) {
+        this.typeKey = typeKey;
+    }
+
+    public String getPixKey() {
+        return pixKey;
+    }
+
+    public void setPixKey(String pixKey) {
+        this.pixKey = pixKey;
     }
 
     public double getBalance() {
@@ -24,20 +49,11 @@ public class Account{
         this.balance = balance;
     }
 
-    public String getType_key() {
-        return type_key;
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
-    public void setType_key(String type_key) {
-        this.type_key = type_key;
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
-
-    public String getPixkey() {
-        return pixkey;
-    }
-
-    public void setPixkey(String pixkey) {
-        this.pixkey = pixkey;
-    }
-
 }

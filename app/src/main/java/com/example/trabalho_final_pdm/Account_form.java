@@ -20,6 +20,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Account_form extends AppCompatActivity {
 
     private ActivityAccountFormBinding binding;
@@ -49,25 +52,26 @@ public class Account_form extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String type_key = (String) binding.accountSpinner.getSelectedItem();
-                String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
                 if (type_key.equals("CPF")){
-                    get_value_CPF(v,type_key,userID);
+                    get_value_CPF(v,type_key,userId);
                 }else {
-                    get_value_numPhone(v,type_key,userID);
+                    get_value_numPhone(v,type_key,userId);
                 }
             }
         });
     }
 
-    private void get_value_CPF(View v, String type_key,String userID){
+    private void get_value_CPF(View v, String type_key,String userId){
         boolean isDone = binding.editTextAccountCPF.isDone();
         String pix_key = binding.editTextAccountCPF.getMasked();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         double balance = 0;
+        List<Transaction> transactions = new ArrayList<>();
         if (isDone){
-            Account account = new Account(balance,type_key,pix_key);
-            DocumentReference documentReference = db.collection("accounts").document(userID);
+            Account account = new Account(userId, type_key, pix_key, balance, transactions);
+            DocumentReference documentReference = db.collection("accounts").document(userId);
             documentReference.set(account).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
@@ -96,14 +100,15 @@ public class Account_form extends AppCompatActivity {
             snackbar.show();
         }
     }
-    private void get_value_numPhone(View v, String type_key,String userID){
+    private void get_value_numPhone(View v, String type_key,String userId){
         boolean isDone = binding.editTextAccountNumPhone.isDone();
         String pix_key = binding.editTextAccountNumPhone.getMasked();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         double balance = 0;
+        List<Transaction> transactions = new ArrayList<>();
         if (isDone){
-            Account account = new Account(balance,type_key,pix_key);
-            DocumentReference documentReference = db.collection("accounts").document(userID);
+            Account account = new Account(userId, type_key, pix_key, balance, transactions);
+            DocumentReference documentReference = db.collection("accounts").document(userId);
             documentReference.set(account).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void unused) {
