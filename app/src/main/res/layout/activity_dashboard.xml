@@ -34,7 +34,7 @@
         android:drawableTint="@color/white"
         android:layout_marginTop="40dp"
         android:id="@+id/TextView_dashboard_hello"
-        android:text=""
+        android:text="@string/deposito_mensagem_txt"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="@color/white"/>

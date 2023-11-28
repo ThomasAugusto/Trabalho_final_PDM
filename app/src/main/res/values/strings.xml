@@ -21,7 +21,7 @@
     //Dashboard Strings
     <string name="dashboard_btn1">MÓDULO CONTA</string>
     <string name="dashboard_btn2">MÓDULO PIX</string>
-    <string name="dashboard_btn3">DESLOGAR</string>
+    <string name="dashboard_btn3">SAIR</string>
 
     //Account Strings
     <string name="Account_title">Chave PIX</string>
@@ -34,6 +34,14 @@
 
     //Módulo Conta Strings
     <string name="deposito_btn">DEPÓSITO</string>
-    <string name="retirada_btn">RETIRADA</string>
+    <string name="retirada_btn">SAQUE</string>
     <string name="extrato_btn">EXTRATO</string>
+
+    //Módulo Depósito
+    <string name="deposito_mensagem_txt">MÓDULO DEPÓSITO</string>
+    <string name="retirada_mensagem_txt">MÓDULO SAQUE</string>
+    <string name="extrato_mensagem_txt">MÓDULO EXTRATO</string>
+
+    //Botão voltar
+    <string name="btn_voltar">VOLTAR</string>
 </resources>

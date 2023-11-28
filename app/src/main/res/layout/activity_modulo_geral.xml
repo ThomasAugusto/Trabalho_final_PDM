@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".DashboardActivity"
@@ -48,7 +46,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             style="@style/Button"
-            android:id="@+id/button_dashboard_account"
+            android:id="@+id/deposito_btn_account"
             android:text="@string/deposito_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,19 +54,30 @@
 
         <androidx.appcompat.widget.AppCompatButton
             style="@style/Button"
-            android:id="@+id/button_dashboard_pix"
+            android:id="@+id/retirada_btn_account"
             android:text="@string/retirada_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_dashboard_account"/>
+            app:layout_constraintTop_toBottomOf="@+id/deposito_btn_account"/>
 
         <androidx.appcompat.widget.AppCompatButton
             style="@style/Button"
-            android:id="@+id/extrato"
+            android:id="@+id/extrato_btn_account"
             android:text="@string/extrato_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_dashboard_pix"/>
+            app:layout_constraintTop_toBottomOf="@+id/retirada_btn_account"/>
+
+        <!--<androidx.appcompat.widget.AppCompatButton
+            style="@style/Button"
+            android:id="@+id/btn_voltar"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/View_dashboard_container"
+            android:layout_marginTop="100dp"
+            android:text="@string/btn_voltar"/> -->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

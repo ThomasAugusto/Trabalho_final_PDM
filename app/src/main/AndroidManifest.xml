@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Trabalho_final_PDM"
         tools:targetApi="31">
         <activity
+            android:name=".Modulo_Geral_Extrato"
+            android:exported="false" />
+        <activity
+            android:name=".Modulo_Geral_Retirada"
+            android:exported="false" />
+        <activity
+            android:name=".Modulo_Geral_Deposito"
+            android:exported="false" />
+        <activity
+            android:name=".conta_deposito"
+            android:exported="false" />
+        <activity
             android:name=".operacao_deposito"
             android:exported="false" />
         <activity

@@ -43,10 +43,17 @@ String userID;
                 startActivity(intent);
                 finish();
             }
-
-
-            // FALTA UM ONCLICK PARA MODULO CONTA !!!!!!!!!!
         });
+
+        btn_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, Modulo_Geral.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     @Override
