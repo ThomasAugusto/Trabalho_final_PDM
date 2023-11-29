@@ -27,7 +27,7 @@ public class Modulo_Geral extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modulo_geral);
-
+        this.getSupportActionBar().hide();
         StartComponents();
 
         deposito_btn_account.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +60,15 @@ public class Modulo_Geral extends AppCompatActivity {
             }
         });
 
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Modulo_Geral.this, DashboardActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     @Override
@@ -78,11 +87,13 @@ public class Modulo_Geral extends AppCompatActivity {
         });
     }
 
+
     private void StartComponents() {
         text_welcome = findViewById(R.id.TextView_dashboard_hello);
         deposito_btn_account = findViewById(R.id.deposito_btn_account);
         retirada_btn_account = findViewById(R.id.retirada_btn_account);
         extrato_btn_account = findViewById(R.id.extrato_btn_account);
+        btnVoltar = findViewById(R.id.btn_voltar1);
     }
 
 

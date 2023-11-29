@@ -42,7 +42,7 @@
     <string name="retirada_mensagem_txt">MÓDULO SAQUE</string>
     <string name="extrato_mensagem_txt">MÓDULO EXTRATO</string>
 
-    <!--//Botão voltar
-    <string name="btn_voltar">VOLTAR</string>-->
+    //Botão voltar
+    <string name="btn_voltar">VOLTAR</string>
 
 </resources>

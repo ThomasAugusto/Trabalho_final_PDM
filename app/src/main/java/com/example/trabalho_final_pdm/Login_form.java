@@ -47,6 +47,7 @@ public class Login_form extends AppCompatActivity {
             public void onClick(View v) {
                 String email = text_email.getText().toString();
                 String pass = text_password.getText().toString();
+                Account account = new Account();
 
                 if (email.isEmpty() || pass.isEmpty()){
                     Snackbar snackbar = Snackbar.make(v,mensages[0],Snackbar.LENGTH_SHORT);

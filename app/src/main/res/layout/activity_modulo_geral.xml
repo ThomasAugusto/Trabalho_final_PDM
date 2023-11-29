@@ -68,16 +68,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/retirada_btn_account"/>
 
-        <!--<androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             style="@style/Button"
-            android:id="@+id/btn_voltar"
+            android:id="@+id/btn_voltar1"
             android:layout_width="150dp"
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/View_dashboard_container"
             android:layout_marginTop="100dp"
-            android:text="@string/btn_voltar"/> -->
+            android:text="@string/btn_voltar"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
