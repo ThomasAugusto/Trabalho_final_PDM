@@ -10,6 +10,9 @@ public class Account{
     private double balance;
     private List<Transaction> transactions;
 
+    public Account() {
+    }
+
     public Account(String userId, String typeKey, String pixKey, double balance, List<Transaction> transactions) {
         this.userId = userId;
         this.typeKey = typeKey;

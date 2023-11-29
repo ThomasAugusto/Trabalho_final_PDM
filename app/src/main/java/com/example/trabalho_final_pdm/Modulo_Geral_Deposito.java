@@ -26,7 +26,7 @@ public class Modulo_Geral_Deposito extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Double valor = Double.valueOf(setValue.getText().toString());
-                if (valor<=0){
+                if (valor <= 0){
                     Snackbar snackbar = Snackbar.make(v,"Por favor digite um valor válido",Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
